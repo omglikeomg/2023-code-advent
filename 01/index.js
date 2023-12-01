@@ -7,8 +7,10 @@ const inputArray = input.split('\n').filter(Boolean);
 const result = inputArray.map((input) => {
   const firstNumber = input.match(/\d/);
   const lastNumber = input.replace(/.*(\d).*/, '$1');
-  const output = firstNumber + lastNumber;
-  return output;
-});
+  const output = parseInt(`${firstNumber}${lastNumber}`);
+  return output
+}).reduce((acc, cur) => acc + cur, 0);
 
-export default result
+export default {
+  result_1: result
+}
